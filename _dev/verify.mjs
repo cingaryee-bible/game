@@ -68,11 +68,15 @@ for(const manifest of ['manifest.webmanifest','manifest-v2.webmanifest','manifes
   assert.equal(m.start_url,'./');assert.equal(m.scope,'./');
   for(const icon of m.icons)assert.ok(existsSync(icon.src));
 }
-assert.ok(readFileSync('book.html','utf8').includes('src="./assets/cat-today-cingaryee.png"'));
+assert.ok(readFileSync('book.html','utf8').includes('src="./assets/cat-today-cingaryee.png?v=repair4"'));
 assert.ok(existsSync('assets/cat-today-cingaryee.png'));
 for(const page of ['index.html','book.html','days/index.html','sleep/index.html']){
   const html=readFileSync(page,'utf8');
   assert.ok(html.includes('apple-touch-icon-v3.png'),page);
   assert.ok(html.includes('manifest-v3.webmanifest'),page);
 }
+for(let level=1;level<=20;level++){
+  assert.ok(existsSync(`assets/tiles/tile-${String(level).padStart(2,'0')}.webp`));
+}
+for(const required of ['days/days.js','days/local-save.js','days/world.js','days/days.css','days/home-nav.js','sleep/sleep.js','sleep/sleep.css'])assert.ok(existsSync(required),required);
 console.log('PASS: local reload, device isolation, pending events, stale-tab protection, failed/corrupt storage preservation, offline rest, 50 stories / 100 outcomes, relative icons and no backend calls.');

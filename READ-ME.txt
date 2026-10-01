@@ -1,0 +1,29 @@
+完整網站：直接取代版 v5
+
+呢個 ZIP 包齊全站遊戲、所有圖片、新桌面 icon 同 CNAME。
+唔係局部更新包，唔需要開任何 command。
+解壓後最外層就見到 index.html、book.html、assets、days、sleep、CNAME。
+
+操作：
+1. GitHub Desktop 揀 cingaryee-bible/game，先 Fetch origin / Pull origin。
+2. Repository > Show in Finder，開返原有 game 資料夾。
+3. 將呢個解壓資料夾內嘅全部內容複製入 game 資料夾。
+   同名檔案和資料夾選「取代」。呢次每個資料夾都係完整嘅。
+   唔好將解壓資料夾呢一層放入 game；index.html 必須直接喺 game 根目錄。
+   唔好刪除原有 game 資料夾，原有隱藏 .git 必須保留。
+4. GitHub Desktop > Commit to main > Push origin。
+5. 等 GitHub Pages 部署完成，用 https://game.cingaryee.com/?v=repair4 開啟。
+
+進度保存在瀏覽器，唔係呢啲網站檔案內。
+存檔名稱、格式、遊戲 JavaScript 都冇改；唔需要清除 Safari 網站資料。
+已加入主畫面嘅舊 icon 如未更新，可以移除舊捷徑，再由首頁重新加至主畫面。
+
+內容：
+- 正確原貓：戴眼鏡、靠住枕頭睇書，旁邊有枱燈。
+- 新 icon：日本可愛插畫風小貓抱住遊戲手掣。
+- 20 款完整書房棋盤圖片。
+- 貓貓小日子完整程式、環境、動作、50 個有圖事件。
+- 貓咪疊疊眠完整程式、圖片。
+- 其他舊遊戲檔案保留。
+- CNAME 已填 game.cingaryee.com，同 GitHub 現有設定一致。
+- .nojekyll 同 _dev 測試檔可一併保留，不需要 command。
