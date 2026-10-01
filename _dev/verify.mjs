@@ -63,9 +63,16 @@ for(const event of EVENTS){
 const code=readFileSync('days/days.js','utf8');
 assert.ok(!code.includes('/api/'));assert.ok(!code.includes('fetch('));
 const home=readFileSync('index.html','utf8');assert.ok(!home.includes('href="/'));
-for(const manifest of ['manifest.webmanifest','manifest-v2.webmanifest']){
+for(const manifest of ['manifest.webmanifest','manifest-v2.webmanifest','manifest-v3.webmanifest']){
   const m=JSON.parse(readFileSync(manifest,'utf8'));
   assert.equal(m.start_url,'./');assert.equal(m.scope,'./');
   for(const icon of m.icons)assert.ok(existsSync(icon.src));
+}
+assert.ok(readFileSync('book.html','utf8').includes('src="./assets/cat-today-cingaryee.png"'));
+assert.ok(existsSync('assets/cat-today-cingaryee.png'));
+for(const page of ['index.html','book.html','days/index.html','sleep/index.html']){
+  const html=readFileSync(page,'utf8');
+  assert.ok(html.includes('apple-touch-icon-v3.png'),page);
+  assert.ok(html.includes('manifest-v3.webmanifest'),page);
 }
 console.log('PASS: local reload, device isolation, pending events, stale-tab protection, failed/corrupt storage preservation, offline rest, 50 stories / 100 outcomes, relative icons and no backend calls.');
