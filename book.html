@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#fffaf2">
+  <meta name="description" content="貓與書的小房間——在紙上慢慢長成一間書房。">
+  <title>貓與書的小房間</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='14' width='64' height='64' fill='%23fff0d5'/%3E%3Cpath d='M15 45V22l9 6 8-10 8 10 9-6v23M14 45c10-5 18-3 18 4 0-7 8-9 19-4' fill='none' stroke='%2311100f' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M46 12l2 5 5 2-5 2-2 5-2-5-5-2 5-2z' fill='%23eb922d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./game-nav.css"><script defer src="./game-nav.js"></script></head>
+<body class="book-page">
+  <main class="app" aria-label="貓與書的小房間遊戲">
+    <nav class="rooms" aria-label="房間"><a href="./" aria-current="page">書房</a><a href="./sleep/">睡房 · 貓咪疊疊眠</a></nav>
+    <header class="topbar">
+      <div class="brand">
+        <div class="mascot-wrap" aria-hidden="true">
+          <img id="mascot" src="./assets/cat-reader.png" alt="">
+        </div>
+        <div>
+          <h1>貓與書的小房間</h1>
+          <p id="catMessage" aria-live="polite">慢慢來，書房會長大的。</p>
+        </div>
+      </div>
+      <button class="icon-button" id="soundButton" aria-label="關閉聲音" title="聲音">♪</button>
+    </header>
+
+    <section class="status" aria-label="遊戲狀態">
+      <div class="score-card"><span>今局</span><strong id="score">0</strong></div>
+      <div class="score-card"><span>最好</span><strong id="best">0</strong></div>
+      <div class="paw-card">
+        <div class="paw-top"><span>貓爪</span><strong id="pawCount">1</strong></div>
+        <div class="meter" aria-hidden="true"><i id="pawMeter"></i></div>
+      </div>
+    </section>
+
+    <section class="board-shell">
+      <div id="floatScore" aria-hidden="true"></div>
+      <div id="board" class="board" role="grid" aria-label="四乘四合併棋盤">
+        <div class="cells" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div id="tiles" class="tiles"></div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="遊戲控制">
+      <button id="undoButton"><span aria-hidden="true">↶</span> 復原</button>
+      <button id="pawButton" class="paw-button"><span aria-hidden="true">爪</span> 貓爪整理</button>
+      <button id="newButton"><span aria-hidden="true">＋</span> 新一局</button>
+    </section>
+
+    <p class="hint">在棋盤上滑動 · 合併相同物件 · 建起你的書房</p>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <span class="dialog-mark" aria-hidden="true">✦</span>
+      <h2 id="modalTitle">書房暫時滿了</h2>
+      <p id="modalText">小貓可以幫你撥開兩格。</p>
+      <div id="modalActions" class="dialog-actions"></div>
+    </div>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="./game.js"></script>
+<nav class="game-home" aria-label="遊戲導覽"><a href="./">⌂　返回首頁</a></nav></body>
+</html>

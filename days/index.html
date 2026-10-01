@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#243e50">
+<title>貓貓小日子 · 貓貓遊戲室</title><meta name="description" content="照顧一隻小貓，一齊探索花園、池塘與海邊小街，收藏日常的小小驚喜。">
+<link rel="icon" href="../assets/sleep/cat-1-clean.png"><link rel="stylesheet" href="days.css?v=home-loading"><link rel="stylesheet" href="home-nav.css?v=1"><script defer src="home-nav.js?v=1"></script><script type="module" src="days.js?v=local1"></script>
+</head>
+<body>
+<main class="game-shell">
+<header class="topbar"><a class="home" href="../" aria-label="一鍵回遊戲首頁">⌂ <span>首頁</span></a><h1>貓貓小日子</h1><button class="icon-button" id="help" aria-label="玩法與存檔說明">?</button></header>
+<div class="petbar"><button id="nameButton" class="name-button" aria-label="更改貓貓名字"><strong id="petName">小糯米</strong><span id="stage">初次見面</span><span class="pencil">✎</span></button><div class="wallet"><span aria-hidden="true">🐟</span> <b id="coins">8</b></div></div>
+<section class="scene home-scene" id="scene" aria-label="貓貓所在的地方">
+<img class="scene-art" id="sceneArt" src="../assets/days/cute/places/home.webp" alt="有書本、植物和軟墊的手繪小屋" fetchpriority="high">
+<div class="light-filter" aria-hidden="true"></div><div class="rain" aria-hidden="true"></div><div class="night-stars" aria-hidden="true">✧ ·　　✦　　　　·　✧</div>
+<div class="worldbar"><span id="location">小屋</span><span id="weather">☀ 晴天</span><span id="clock">08:00</span></div>
+<button class="scene-spot spot-one" id="spotOne" aria-label="探索環境"><span>窗邊望望</span><i>✦</i></button>
+<button class="scene-spot spot-two" id="spotTwo" aria-label="探索環境"><i>✦</i><span>周圍聞聞</span></button>
+<div id="decoration" class="decoration" aria-label="小屋佈置"></div>
+<div class="cat-zone" id="catZone"><div class="speech" id="catSpeech">有你陪住就好。</div><button id="cat" class="cat-button" aria-label="摸摸貓貓"><img id="catImage" src="../assets/days/cute/poses/sit.webp" alt="你的貓貓"><span class="sleep-z" aria-hidden="true">z Z z</span></button></div>
+<button class="event-peek" id="eventPeek" hidden><img id="eventThumb" alt=""><strong id="eventLabel">有小事情發生</strong><span>睇吓</span></button>
+<div class="scene-caption"><span id="sceneLine">一盞燈，等你返屋企</span><span id="day">第 1 日</span></div>
+</section>
+<section class="needs" aria-label="貓貓狀態">
+<div><label for="food">飽肚 <b id="foodN">82</b></label><meter id="food" min="0" max="100" value="82"></meter></div><div><label for="mood">心情 <b id="moodN">82</b></label><meter id="mood" min="0" max="100" value="82"></meter></div><div><label for="clean">乾淨 <b id="cleanN">88</b></label><meter id="clean" min="0" max="100" value="88"></meter></div><div><label for="energy">精神 <b id="energyN">86</b></label><meter id="energy" min="0" max="100" value="86"></meter></div>
+</section>
+<div class="status-row"><span id="bond">♡ 熟悉中</span><span id="saveState" role="status">正在接貓貓返屋企…</span></div>
+<nav class="care" aria-label="照顧貓貓"><button data-action="feed"><img src="../assets/days/cute/poses/eat-a.webp" alt="">餵食</button><button id="play"><img src="../assets/days/cute/poses/pounce.webp" alt="">陪玩</button><button data-action="clean"><img src="../assets/days/cute/poses/brush-a.webp" alt="">梳毛</button><button data-action="rest" id="rest"><img src="../assets/days/cute/poses/sleep.webp" alt=""><b>休息</b></button></nav>
+<nav class="bottom-nav" aria-label="遊戲功能"><button id="map"><span>⌖</span>去散步</button><button id="collection"><span>✧</span>收藏冊 <b id="collectionN">0/12</b></button><button id="journal"><span>▤</span>小日記</button></nav>
+<div class="connection" id="connection" hidden><p id="connectionText"></p><button id="retry">再試一次</button></div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog id="sheet"><div class="sheet-head"><h2 id="sheetTitle"></h2><button id="closeSheet" aria-label="關閉">×</button></div><div id="sheetBody"></div></dialog>
+</body></html>

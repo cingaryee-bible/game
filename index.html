@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fffaf2">
+  <title>貓貓遊戲室</title>
+  <meta name="description" content="貓貓小日子、貓與書的小房間、貓咪疊疊眠。揀一款，慢慢玩。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="貓貓遊戲室">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192-v2.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon-v2.png">
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="./apple-touch-icon-v2.png">
+  <link rel="manifest" href="./manifest-v2.webmanifest">
+  <style>
+    #siteLoading{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;padding:24px;background:#fffaf2;color:#3f5260;opacity:1;visibility:visible;transition:opacity .16s ease,visibility 0s linear .16s}
+    #siteLoading.done{opacity:0;visibility:hidden}
+    .site-loading-card{width:min(280px,82vw);text-align:center;font:600 16px/1.5 system-ui,sans-serif}
+    .site-loading-paw{display:block;margin:0 auto 14px;font-size:38px;line-height:1;animation:site-paw .72s ease-in-out infinite alternate}
+    .site-loading-track{height:7px;margin-top:15px;overflow:hidden;border-radius:99px;background:#dce7eb}
+    .site-loading-bar{display:block;width:42%;height:100%;border-radius:inherit;background:#658b9d;animation:site-progress .85s ease-in-out infinite}
+    @keyframes site-paw{to{transform:translateY(-5px) rotate(7deg)}}
+    @keyframes site-progress{0%{transform:translateX(-110%)}100%{transform:translateX(350%)}}
+    @media(prefers-reduced-motion:reduce){.site-loading-paw{animation:none}.site-loading-bar{width:100%;animation:none}}
+  </style>
+  <link rel="stylesheet" href="home.css">
+  <script defer src="home-nav.js"></script>
+</head>
+<body>
+  <div id="siteLoading" role="status" aria-live="polite">
+    <div class="site-loading-card">
+      <span class="site-loading-paw" aria-hidden="true">🐾</span>
+      <span>準備遊戲室…</span>
+      <div class="site-loading-track" aria-hidden="true"><i class="site-loading-bar"></i></div>
+    </div>
+  </div>
+  <main>
+    <header>
+      <div><h1>貓貓遊戲室</h1><p>今日想點樣玩？</p><p style="font-size:13px;color:#647d8a">免登入 · 進度留喺呢個瀏覽器</p></div>
+      <img src="./assets/sleep/cat-1-clean.png" alt="睡覺的小貓">
+    </header>
+    <section class="games" aria-label="遊戲列表">
+      <a class="game days" href="./days/">
+        <div class="art"><img src="./assets/days/cute/places/home.webp" alt="貓貓溫暖的小屋" style="object-fit:cover"></div>
+        <div><span class="tag">NEW · 照顧與探索</span><h2>貓貓小日子</h2><p>養一隻貓，一齊散步，<br>收藏日夜之間的小驚喜。</p><span class="play-label">陪貓貓過日子</span></div>
+      </a>
+      <a class="game" href="./book.html">
+        <div class="art"><img src="./assets/tiles/tile-10.webp" alt="貓咪書房"></div>
+        <div><span class="tag">合併解謎</span><h2>貓與書的小房間</h2><p>由一張紙開始，<br>慢慢砌出你的書房。</p><span class="play-label">進入書房</span></div>
+      </a>
+      <a class="game" href="./sleep/">
+        <div class="art"><img src="./assets/sleep/cat-5-clean.png" alt="睡覺的貓"></div>
+        <div><span class="tag">掉落合成</span><h2>貓咪疊疊眠</h2><p>輕輕放低小貓，<br>疊出一場大大的好夢。</p><span class="play-label">進入睡房</span></div>
+      </a>
+    </section>
+    <section class="install-panel" aria-labelledby="installTitle">
+      <img src="./assets/icons/apple-touch-icon.png" alt="貓貓遊戲室圖示">
+      <div><h2 id="installTitle">放喺手機桌面，隨時開嚟玩</h2><p>加到主畫面後，會顯示專屬貓貓圖示。</p></div>
+      <button id="installButton" type="button">加到手機桌面</button>
+    </section>
+  </main>
+  <dialog id="installGuide" aria-labelledby="guideTitle">
+    <div class="guide-card">
+      <button class="guide-close" type="button" aria-label="關閉">×</button>
+      <img src="./assets/icons/apple-touch-icon.png" alt="" aria-hidden="true">
+      <h2 id="guideTitle">加到 iPhone 主畫面</h2>
+      <h3 style="text-align:left;margin:18px 0 8px;color:#315f73">Safari</h3>
+      <ol>
+        <li>用 <strong>Safari</strong> 開啟呢個網站。</li>
+        <li>點 Safari 底部嘅 <strong>分享</strong> 按鈕（方框向上箭嘴）。</li>
+        <li>向下捲，揀 <strong>「加至主畫面」</strong>。</li>
+        <li>確認名稱後，點右上角 <strong>「加入」</strong>。</li>
+      </ol>
+      <h3 style="text-align:left;margin:20px 0 8px;color:#315f73">Chrome</h3>
+      <ol>
+        <li>用 <strong>Chrome</strong> 開啟呢個網站。</li>
+        <li>點網址列右邊嘅 <strong>分享</strong> 按鈕。</li>
+        <li>揀 <strong>「加至主畫面」</strong>。</li>
+        <li>確認名稱後，點右上角 <strong>「加入」</strong>。</li>
+      </ol>
+      <button class="guide-done" type="button" style="margin-top:20px">知道了</button>
+    </div>
+  </dialog>
+  <script>
+    addEventListener('load',()=>{const loader=document.querySelector('#siteLoading');if(!loader)return;loader.classList.add('done');setTimeout(()=>loader.remove(),180)},{once:true});
+    (()=>{const dialog=document.querySelector('#installGuide'),open=document.querySelector('#installButton');if(!dialog||!open)return;const close=()=>dialog.close();open.addEventListener('click',()=>dialog.showModal());dialog.querySelector('.guide-close').addEventListener('click',close);dialog.querySelector('.guide-done').addEventListener('click',close);dialog.addEventListener('click',e=>{if(e.target===dialog)close()});if(matchMedia('(display-mode: standalone)').matches||navigator.standalone===true){open.textContent='已加到手機桌面';open.disabled=true}})();
+  </script>
+</body>
+</html>

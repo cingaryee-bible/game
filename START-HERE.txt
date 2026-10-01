@@ -1,0 +1,71 @@
+貓貓遊戲室 — GitHub Pages 上傳版
+2026-10-01
+
+這份是可以作為全新公開網站使用的版本。
+三款首頁遊戲：貓貓小日子、貓與書的小房間、貓咪疊疊眠。
+免登入，不需要 ChatGPT、後端、資料庫、API key 或 npm 安裝。
+育成包含 50 款配圖事件、可愛貓動作、日夜天氣、圖畫日記及回首頁 loading bar。
+原專案保留的其他遊戲資料夾亦在包內，首頁仍只顯示上述三款。
+
+上傳及開站
+1. 解壓縮 ZIP。
+2. 將解壓後的「內容」上傳至 GitHub repository 的 main 分支。
+   index.html、assets、days、sleep 等必須放在 repository 最外層。
+   不要直接上傳 ZIP 檔，也不要再包多一層資料夾。
+3. 開 repository 的 Settings > Pages。
+4. Source 選 Deploy from a branch。
+5. Branch 選 main，Folder 選 /(root)，按 Save。
+6. 等 GitHub 完成發佈，使用 Pages 顯示的網址開啟。
+   網站遊玩者不需要登入 GitHub 或 ChatGPT。
+
+如果用 GitHub 網頁手動上傳
+GitHub 每次最多上傳 100 個檔案。本包可以分以下三批：
+A. 在 repository 最外層，上傳除了 assets 資料夾外的所有檔案和資料夾。
+B. 用 Add file > Create new file 建立 assets/.gitkeep 並提交。
+   之後在 GitHub 進入 assets 資料夾，按 Upload files：
+   上傳電腦 assets 裏面除了 days 資料夾之外的所有內容，保留資料夾層級。
+C. 仍在 GitHub 的 assets 資料夾，上傳電腦 assets/days 這個整個資料夾。
+每批完成後按 Commit changes。三批全部上傳完才開站。
+亦可透過 GitHub Desktop 一次提交整個網站，毋須按上述批次分開。
+
+本包附有空白 .nojekyll 檔案，讓 GitHub 直接提供靜態檔案。
+Mac 若看不到這個檔案，可在 Finder 按 Command + Shift + . 顯示隱藏檔；
+亦可在 GitHub 最外層 Create new file，檔名填 .nojekyll，內容留空並提交。
+
+存檔方式
+- 每位玩家的進度只存在自己的裝置及瀏覽器，沒有伺服器上傳。
+- 同一瀏覽器、同一網址會共用同一份進度；其他人的裝置不會互相影響。
+- 換裝置、換瀏覽器、轉到另一個網域或網站路徑，都不會自動搬移存檔。
+- 清除網站資料會清除本機存檔；私密瀏覽可能在關閉後移除資料。
+- 遊戲會讀取本機時間計算離開期間的貓貓狀態；育成不會死亡或走失。
+- 新站沒有匯入舊網站的雲端存檔，大家從零開始。
+- 新站上傳包內沒有玩家資料，原網站及原雲端存檔沒有被修改。
+
+網址與圖示
+所有遊戲、圖片、首頁和桌面圖示均使用相對路徑。
+可用於 https://你的帳號.github.io/你的repository/ 或已設定好的自訂網域。
+若日後綁定 game.cingaryee.com，要另外在 GitHub Pages 及網域 DNS 設定；
+這份 ZIP 沒有預先加入 CNAME，避免未完成 DNS 設定就影響初次上線。
+建議先確定最終網址，再開始長期儲存進度。
+
+可選：本機預覽與測試
+這部分只供修改程式時使用，GitHub Pages 上線不需要執行。
+有 Node.js 的電腦可在解壓資料夾執行：
+  npm run dev
+再開 http://localhost:4173/
+測試指令：
+  npm test
+不需要安裝 npm dependencies。不支援直接雙擊 HTML 的 file:// 模式。
+_dev/ 是本機開發工具，不是線上後端。
+
+已做的檢查
+- 390px 手機寬度的首頁、育成事件、書房棋盤與疊疊眠。
+- 育成改名、餵食、完成事件、離開及重新進入後保留進度。
+- 50 事件、100 選擇結果、獨立裝置、舊分頁衝突及本機寫入失敗。
+- 所有 HTML/CSS 圖片及連結可在本包內找到。
+- 育成不再呼叫後端 API，所有圖片均隨包附上。
+- 一般網址及 /repository/ 子路徑結構。
+
+GitHub 官方說明
+https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository

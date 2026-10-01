@@ -1,0 +1,9 @@
+{
+  "name": "cat-game-room-static",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node _dev/preview.mjs",
+    "test": "node _dev/verify.mjs"
+  }
+}
